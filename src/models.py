@@ -15,9 +15,11 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            # do not serialize the password, its a security breach
         }
 
 class People(db.Model):
+    # __tablename__ = 'people_sw'
    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
@@ -47,6 +49,7 @@ class People(db.Model):
 
 
 class Planets(db.Model):
+    # __tablename__ = 'planets_sw'
    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
@@ -77,6 +80,7 @@ class Planets(db.Model):
         }
 
 class Favorites(db.Model):
+    # __tablename__ = 'favorites_sw'
    
     id = db.Column(db.Integer, primary_key=True)
     tipo = db.Column(db.Integer, nullable=False)
